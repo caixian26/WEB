@@ -114,5 +114,54 @@
         </script>
     </ul>
 --------------------------------------------------
+    <h1>Function 함수</h1>
+    <h2>Basic</h2>
+    <ul>
+        <script>
+            function two(){
+                document.write('<li>2-1</li>')
+                document.write('<li>2-2</li>')
+            }
+            document.write('<li>1</li>')
+            two();
+            document.write('<li>3</li>')
+            two();
+        </script>
+    </ul>
+    <h2>Parameter & Argument</h2>
+    <h2>Return</h2>
+--------------------------------------------------
+폴더(객체)
+document.write -> ducument라는 객체에 함수 write가 속해있음
+객체에 속해있는 함수는 메소드 라고 불림
+객체를 이름이 있는 정리정돈 상자라고 생각하면 편함
+--------------------------------------------------
+    <h1>Object객체</h1>
+    <h2>Create생성</h2>
+    <script>
+        var coworkers = {
+            "programmer":"egoing",
+            "designer":"leezche"
+        };
+        document.write("programmer:"+coworkers.programmer+"<br>");
+        document.write("designer:"+coworkers.designer+"<br>");
+        coworkers.bookkeeper="duru";
+        document.write("bookkeeper:"+coworkers.bookkeeper+"<br>");
+        coworkers["data scientist"]="taeho";
+        document.write("data scientist:"+coworkers["data scientist"]+"<br>");
+    </script>
+--------------------------------------------------
+library - 부품을 잘 정리정돈 해놓은 소프트웨어
+framework - 공통적인 부품? 반제품 같은 소프트웨어
+
+library - jQuery, 
+
+UI - 사용자가 직접 보고, 클릭하고, 조작할 수 있는 화면을 말해. 쉽게 말하면, 우리가 웹사이트나 앱을 사용할 때 보이는 모든 것
+    간단하게 말해서 프론트엔드.
+API - 프로그램끼리 데이터를 주고받을 수 있도록 해주는 연결 도구 
+    간단하게 말해서 '주로' 백엔드.
+--------------------------------------------------
+컨트롤/ 는 주석처리
+
 </body>
 </html>

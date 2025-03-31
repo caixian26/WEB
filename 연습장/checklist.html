@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크리스트</title>
+    <link rel="stylesheet" href="checklist.css">
+    <script src="checklist.js" defer></script>
+</head>
+<body>
+    <div class="checklist-container">
+        <h2>📋 체크리스트</h2>
+        <ul id="task-list">
+            <li>
+                <input type="checkbox" id="task1">
+                <label for="task1">운동하기</label>
+            </li>
+            <li>
+                <input type="checkbox" id="task2">
+                <label for="task2">독서하기</label>
+            </li>
+            <li>
+                <input type="checkbox" id="task3">
+                <label for="task3">코딩 연습</label>
+            </li>
+        </ul>
+        <input type="text" id="new-task" placeholder="새로운 할 일 추가">
+        <button onclick="addTask()">추가</button>
+    </div>
+</body>
+</html>

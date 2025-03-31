@@ -4,33 +4,17 @@
     <title>WEB</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <!--
-    <style>
-        a {
-            color:black;
-            text-decoration: none;
-            border:2px solid red;
-            padding:20px;
-            margin:10px;
-            display:block;
-            width:100px;
-            font-size:20px;
-            text-align:center;
-        }
-        h1 {
-            font-size:45px;
-            background-color:orange;
-            text-align:center;
-        }
-    </style>
-    -->
+    <link rel="stylesheet" href="clock.css">
+    <script src="nightdaycolors.js"></script>
+    <script src="clock.js"></script>
 </head>
 
 <body>
     <h1><a class="logo" href="WEB.html">일정 관리 매니저</a></h1>
-    <input type="button" value="night" onclick="nightMode()">
-    <input type="button" value="day" onclick="dayMode()">
+    
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
 
     <div id="grid">
         <ol>
@@ -39,12 +23,14 @@
             <li><a href="체크리스트.html">체크리스트</a></li>
             <li><a href="월간달력.html">월간달력</a></li>
         </ol>
-        <div id="article">
-            <h2>현재시간</h2>
-            <p>
-                현재시간은 자바스크립트로 한답니다
-            </p>
-        </div>
+    
+        <article>
+            <div id="clock-container">
+                <h2 id="clock-title">현재시간</h2>
+                <p id="clock">로딩 중...</p>
+            </div>
+        </article>
     </div>
+
 </body>
 </html>

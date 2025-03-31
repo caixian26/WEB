@@ -4,14 +4,17 @@
     <title>월간달력</title>
     <meta charset = "utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="nightdaycolors.js"></script>
+    <link rel="stylesheet" href="월간달력.css">
+    <script src="월간달력.js" defer></script>
 </head>
 
 <body>
     <h1><a class="logo" href="WEB.html">일정 관리 매니저</a></h1>
 
-    <input type="button" value="night" onclick="nightMode()">
-    <input type="button" value="day" onclick="dayMode()">
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
 
     <div id="grid">
         <ol>
@@ -20,13 +23,32 @@
             <li><a href="체크리스트.html">체크리스트</a></li>
             <li><a href="월간달력.html">월간달력</a></li>
         </ol>
-        <div id="article">
-            <h2>월간달력</h2>
-            <p>
-                <ul>
-                    월간달력
-                </ul>
-            </p>
+
+        <div class="calendar-container">
+            <h2>📅 <span id="current-year"></span>년 <span id="current-month"></span>월</h2>
+            <div class="calendar-header">
+                <button id="prev-month">◀ 이전달</button>
+                <button id="next-month">다음달 ▶</button>
+            </div>
+            <div id="calendar">
+                <div class="day header">일</div>
+                <div class="day header">월</div>
+                <div class="day header">화</div>
+                <div class="day header">수</div>
+                <div class="day header">목</div>
+                <div class="day header">금</div>
+                <div class="day header">토</div>
+            </div>
+        </div>
+
+        <!-- 메모 입력창 -->
+        <div id="memo-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="memo-date"></h3>
+                <textarea id="memo-text" placeholder="메모를 입력하세요..."></textarea>
+                <button id="save-memo">저장</button>
+            </div>
         </div>
     </div>
 </body>

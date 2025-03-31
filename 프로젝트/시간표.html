@@ -4,14 +4,17 @@
     <title>시간표</title>
     <meta charset = "utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="nightdaycolors.js"></script>
+    <link rel="stylesheet" href="시간표.css">
+    <script src="시간표.js" defer></script>
 </head>
 
 <body>
     <h1><a class="logo" href="WEB.html">일정 관리 매니저</a></h1>
     
-    <input type="button" value="night" onclick="nightMode()">
-    <input type="button" value="day" onclick="dayMode()">
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
 
     <div id="grid">
         <ol>
@@ -20,13 +23,25 @@
             <li><a href="체크리스트.html">체크리스트</a></li>
             <li><a href="월간달력.html">월간달력</a></li>
         </ol>
-        <div id="article">
-            <h2>시간표</h2>
-            <p>
-                <ul>
-                    시간표
-                </ul>
-            </p>
+
+        <div class="schedule-container">
+            <h2>📚 시간표</h2>
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>시간</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                        <th>일</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-body"></tbody>
+            </table>
+            <button id="add-row">시간 추가</button>
         </div>
     </div>
 </body>

@@ -3,6 +3,36 @@
 <head>
     <meta charset="utf-8">
     <title>Night Day</title>
+    <script>
+        function nightDayHandler(self){
+            var target=document.querySelector('body');
+            if(self.value === 'night') {
+            target.style.backgroundColor='black';
+            target.style.color='white';
+            self.value='day';
+
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length) {
+                alist[i].style.color = 'powderblue';
+                i = i + 1;
+            }
+
+        } else {
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            self.value='night';
+
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length) {
+                alist[i].style.color = 'blue';
+                i = i + 1;
+            }
+
+        }
+    }
+    </script>
 </head>
 <!--
     <바디 style="background-color: black; color:white;">
@@ -41,7 +71,8 @@ night버튼 day버튼 두개 시
 </바디>
 리팩토링 밑에
 -->
-<body>
+<!--
+<바디>
     <h1><a href="문법.html">"Night Day</a>"</h1>
 
     <input type="button" value="night" onclick="
@@ -72,7 +103,16 @@ night버튼 day버튼 두개 시
 
     }   
     ">
+</바디>
+head에 사용(저 위의 코드가 1억개 있다면)
+-->
+
+<body>
+    <h1><a href="문법.html">"Night Day</a>"</h1>
+
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
 
 </body>
-
 </html>

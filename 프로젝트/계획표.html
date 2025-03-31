@@ -4,14 +4,17 @@
     <title>계획표</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="nightdaycolors.js"></script>
+    <link rel="stylesheet" href="계획표.css">
+    <script src="계획표.js" defer></script>
 </head>
 
 <body>
     <h1><a class="logo" href="WEB.html">일정 관리 매니저</a></h1>
     
-    <input type="button" value="night" onclick="nightMode()">
-    <input type="button" value="day" onclick="dayMode()">
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
 
     <div id="grid">
         <ol>
@@ -20,13 +23,15 @@
             <li><a href="체크리스트.html">체크리스트</a></li>
             <li><a href="월간달력.html">월간달력</a></li>
         </ol>
+
         <div id="article">
-            <h2>계획표</h2>
-            <p>
-                <ul>
-                    계획표
-                </ul>
-            </p>
+            <div class="planner-container">
+                <h2>📝 계획표</h2>
+                <input type="date" id="date-picker">
+                <input type="text" id="task-input" placeholder="할 일을 입력하세요">
+                <button id="add-task">추가</button>
+                <ul id="task-list"></ul>
+            </div>
         </div>
     </div>
 </body>

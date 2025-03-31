@@ -1,0 +1,30 @@
+#clock-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    background-color: #282c36;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto; /* 기본적으로 가운데 정렬 */
+    border-radius: 10px;
+
+    margin-left: 200px; /* 왼쪽에 여백 추가 (조정 가능) */
+}
+
+#clock-title {
+    font-size: 2rem;
+}
+
+#clock {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
+}

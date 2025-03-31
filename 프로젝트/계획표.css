@@ -1,0 +1,15 @@
+.planner-container {
+    width: 80%; /* 기존 60%에서 80%로 확대 */
+    margin: auto;
+    text-align: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: start; /* 높이를 다른 페이지와 맞춤 */
+}
+
+#article {
+    padding-left: 30px; /* 다른 페이지와 동일하게 조정 */
+}

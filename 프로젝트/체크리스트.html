@@ -4,14 +4,17 @@
     <title>체크리스트</title>
     <meta charset = "utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="nightdaycolors.js"></script>
+    <link rel="stylesheet" href="체크리스트.css">
+    <script src="체크리스트.css" defer></script>
 </head>
 
 <body>
     <h1><a class="logo" href="WEB.html">일정 관리 매니저</a></h1>
 
-    <input type="button" value="night" onclick="nightMode()">
-    <input type="button" value="day" onclick="dayMode()">
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
 
     <div id="grid">
         <ol>
@@ -20,27 +23,25 @@
             <li><a href="체크리스트.html">체크리스트</a></li>
             <li><a href="월간달력.html">월간달력</a></li>
         </ol>
-        <div id="article">
-            <h2>체크리스트</h2>
-            <p>
-                <ul>
-                    <li><p><input type="checkbox"> 6시 기상&씻기</p></li>
-                    <li><p><input type="checkbox"> 7시 국어</p></li>
-                    <li><p><input type="checkbox"> 10시 수학 </p></li>
-                    <li><p><input type="checkbox"> 12시 중식</p></li>
-                    <li><p><input type="checkbox"> 13시 영어</p></li>
-                    <li><p><input type="checkbox"> 15시 사탐</p></li>
-                    <li><p><input type="checkbox"> 17시 석식</p></li>
-                    <li><p><input type="checkbox"> 18시 국어</p></li>
-                    <li><p><input type="checkbox"> 20시 수학</p></li>
-                    <li><p><input type="checkbox"> 22시 복습&계획</p></li>
-                    <li><p><input type="checkbox"> 23시 꿈나라</p></li>
-                </ul>
-
-                <ul>
-                    <u><strong>Feat.고은</strong></u>
-                </ul>
-            </p>
+        
+        <div class="checklist-container">
+            <h2>📋 체크리스트</h2>
+            <ul id="task-list">
+                <li>
+                    <input type="checkbox" id="task1">
+                    <label for="task1">운동하기</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task2">
+                    <label for="task2">독서하기</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="task3">
+                    <label for="task3">코딩 연습</label>
+                </li>
+            </ul>
+            <input type="text" id="new-task" placeholder="새로운 할 일 추가">
+            <button onclick="addTask()">추가</button>
         </div>
     </div>
 </body>
