@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <script src="nightdaycolors.js"></script>
+    <link rel="stylesheet" href="타이머.css">
+    <script src="타이머.js"></script>
      <!-- Google 폰트 추가 -->
      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
      <!-- jQuery & GSAP 라이브러리 추가 -->
@@ -53,6 +55,7 @@
                     <button id="reset-stopwatch">🔄 초기화</button>
                     <button id="save-record">📌 기록</button>
                 </div>
+                <input type="text" id="stopwatch-memo" placeholder="메모 입력">
                 <ul id="record-list"></ul>
             </section>
     
@@ -71,12 +74,12 @@
         </main>
     </div>
 
-    <!-- 📌 포커스 모드 -->
+    <!-- 📌 포커스 모드 버튼 -->
     <button id="focus-mode-btn">포커스 모드 🔒</button>
 
-    <!-- 📌 포커스 모드 영상 (숨김 상태) -->
-    <div id="focus-video-container">
-        <video id="focus-video" controls>
+    <!-- 📌 포커스 모드 영상 (처음에는 숨김) -->
+    <div id="focus-video-container" style="display: none;">
+        <video id="focus-video" width="300" controls>
             <source src="focus.mp4" type="video/mp4">
             브라우저가 비디오 태그를 지원하지 않습니다.
         </video>
