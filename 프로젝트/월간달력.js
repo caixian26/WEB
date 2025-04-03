@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 selectedDate = memoKey;
                 memoDateElement.textContent = `${currentYear}년 ${currentMonth + 1}월 ${i}일`;
                 memoText.value = memos[memoKey] || "";
+                memoModal.style.top = `${event.clientY + 10}px`; // Y 위치 조정 (클릭 위치 아래)
+                memoModal.style.left = `${event.clientX}px`; // X 위치 조정
                 memoModal.style.display = "block";
             });
 

@@ -1,0 +1,58 @@
+body {
+    background-color: #f4f4f4;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    background: black;
+    display: block;
+    margin: auto;
+    border: 2px solid white;
+}
+
+.game-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.game-ui {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#startButton, #restartButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#scoreDisplay {
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+#restartButton {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 15px 30px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#restartButton:hover {
+    background: darkred;
+}

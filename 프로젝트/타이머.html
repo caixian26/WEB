@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <title>타이머</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="nightdaycolors.js"></script>
+     <!-- Google 폰트 추가 -->
+     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+     <!-- jQuery & GSAP 라이브러리 추가 -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+</head>
+
+<body>
+    <h1><a class="logo" href="WEB.html">일정 관리 매니저</a></h1>
+    
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+
+    <!-- SVG 필터 (글리치 효과) -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.0005 0.0005" numOctaves="2" result="warp" seed="2"></feTurbulence>
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="8" in="SourceGraphic" in2="warp"></feDisplacementMap>
+            </filter>
+        </defs>
+    </svg>
+
+    <div id="grid">
+        <ol>
+            <nav>
+                <a href="시간표.html" class="btn btn-glitch" data-text="시간표">시간표</a>
+                <a href="계획표.html" class="btn btn-glitch" data-text="계획표">계획표</a>
+                <a href="체크리스트.html" class="btn btn-glitch" data-text="체크리스트">체크리스트</a>
+                <a href="월간달력.html" class="btn btn-glitch" data-text="월간달력">월간달력</a>
+                <a href="메모장.html" class="btn btn-glitch" data-text="메모장">메모장</a>
+                <a href="게임.html" class="btn btn-glitch" data-text="게임">게임</a>
+                <a href="타이머.html" class="btn btn-glitch" data-text="타이머">타이머</a>
+            </nav>
+        </ol>
+
+        <main class="timer-container">
+            <!-- 📌 좌측: 스탑워치 -->
+            <section class="stopwatch">
+                <h2>⏱ 스탑워치</h2>
+                <div class="time-display" id="stopwatch-display">00:00:00</div>
+                <div class="buttons">
+                    <button id="start-stopwatch">▶ 시작</button>
+                    <button id="pause-stopwatch">⏸ 정지</button>
+                    <button id="reset-stopwatch">🔄 초기화</button>
+                    <button id="save-record">📌 기록</button>
+                </div>
+                <ul id="record-list"></ul>
+            </section>
+    
+            <!-- 📌 우측: 타이머 -->
+            <section class="timer">
+                <h2>⏳ 타이머</h2>
+                <input type="number" id="timer-input" placeholder="분 입력" min="1">
+                <textarea id="timer-memo" placeholder="할 일을 입력하세요"></textarea>
+                <div class="buttons">
+                    <button id="start-timer">▶ 시작</button>
+                    <button id="pause-timer">⏸ 일시정지</button>
+                    <button id="reset-timer">🔄 초기화</button>
+                </div>
+                <div class="time-display" id="timer-display">00:00</div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 📌 포커스 모드 -->
+    <button id="focus-mode-btn">포커스 모드 🔒</button>
+
+    <!-- 📌 포커스 모드 영상 (숨김 상태) -->
+    <div id="focus-video-container">
+        <video id="focus-video" controls>
+            <source src="focus.mp4" type="video/mp4">
+            브라우저가 비디오 태그를 지원하지 않습니다.
+        </video>
+        <button id="exit-focus">❌ 종료</button>
+    </div>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="glitch.js"></script>
+</body>
+</html>

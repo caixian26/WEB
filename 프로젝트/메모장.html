@@ -1,12 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>체크리스트</title>
-    <meta charset = "utf-8">
+    <title>메모장</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <script src="nightdaycolors.js"></script>
-    <link rel="stylesheet" href="체크리스트.css">
-    <script src="체크리스트.js" defer></script>
+    <link rel="stylesheet" href="메모장.css">
+    <script src="메모장.js"></script>
     <!-- Google 폰트 추가 -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <!-- jQuery & GSAP 라이브러리 추가 -->
@@ -16,7 +16,7 @@
 
 <body>
     <h1><a class="logo" href="WEB.html">일정 관리 매니저</a></h1>
-
+    
     <input id="night_day" type="button" value="night" onclick="
         nightDayHandler(this);
     ">
@@ -43,13 +43,15 @@
                 <a href="타이머.html" class="btn btn-glitch" data-text="타이머">타이머</a>
             </nav>
         </ol>
-        
-        <section id="checklist-section">
-            <h2>📌 체크리스트</h2>
-            <div class="checklist-container">
-                <input type="text" id="task-input" placeholder="할 일을 입력하세요">
-                <button id="add-task">➕ 추가</button>
-                <ul id="task-list"></ul>
+    
+        <section id="memo-section">
+            <h2>📝 메모장</h2>
+            <div class="memo-container">
+                <textarea id="memo-area" placeholder="여기에 메모를 입력하세요..."></textarea>
+                <div class="buttons">
+                    <button id="save-txt">TXT 저장</button>
+                    <button id="save-as-txt">다른 이름으로 저장</button>
+                </div>
             </div>
         </section>
     </div>

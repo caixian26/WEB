@@ -1,15 +1,80 @@
+#article {
+    padding-left: 70px;
+}
+
+/* ✅ 일정 입력 영역 스타일 */
 .planner-container {
-    width: 80%; /* 기존 60%에서 80%로 확대 */
+    width: 100%;
+    max-width: 600px;
     margin: auto;
     text-align: center;
 }
 
-#grid {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    align-items: start; /* 높이를 다른 페이지와 맞춤 */
+/* ✅ 입력 필드 & 버튼 */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
-#article {
-    padding-left: 30px; /* 다른 페이지와 동일하게 조정 */
+input[type="date"], 
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ✅ 버튼 스타일 */
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#add-task {
+    background-color: #007bff;
+    color: white;
+}
+
+/* ✅ 리스트 스타일 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+}
+
+/* ✅ 완료된 항목 */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    background: #e0e0e0;
+}
+
+/* ✅ 완료 버튼 */
+button.complete-btn {
+    background-color: green;
+    color: white;
+}
+
+/* ✅ 삭제 버튼 */
+button.delete-btn {
+    background-color: red;
+    color: white;
 }

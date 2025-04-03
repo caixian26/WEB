@@ -2,15 +2,26 @@ body {
     margin:0;
 }
 a {
-    color:black;
+    color: black;
     text-decoration: none;
-    border:2px solid red;
-    padding:20px;
-    margin:10px;
-    display:block;
-    width:100px;
-    font-size:20px;
-    text-align:center;
+    border: 2px solid red;
+    padding: 20px;
+    margin: 10px;
+    display: block;
+    width: 100px;
+    font-size: 20px;
+    text-align: center;
+    transition: color 0.3s;
+}
+body.night-mode {
+    color: green;  /* ✅ 모든 글씨 초록색 */
+}
+
+body.night-mode a {
+    color: green;  /* ✅ 링크도 초록색 */
+}
+body.night-mode h1 a.logo {
+    background-color: darkorange;
 }
 h1 a.logo {
     font-size:45px;
@@ -49,7 +60,96 @@ ol {
     }
 }
 #night_day {
-    width: auto;
-    padding: 5px 10px;
-    font-size: 16px;
+    width: 120px; 
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #b8b8b8, -5px -5px 10px #ffffff;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#night_day:active {
+    box-shadow: inset 5px 5px 10px #b8b8b8, inset -5px -5px 10px #ffffff;
+}
+
+
+
+
+/* 기본 버튼 스타일 */
+.btn {
+    display: inline-block;
+    font-family: "Roboto Mono", monospace;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    color: white;
+    background: black;
+    text-transform: uppercase;
+    border: 2px solid white;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* 글리치 버튼 효과 */
+.btn-glitch {
+    position: relative;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    background: black;
+    padding: 12px 24px;
+    border: 2px solid white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+    filter: url(#filter); /* 🔥 SVG 필터 적용 */
+}
+
+.btn-glitch:hover {
+    color: red; /* 호버 시 색상 변경 */
+}
+
+/* 글리치 효과 활성화 */
+.btn-glitch-active {
+    animation: glitch-animation 0.3s infinite linear alternate;
+}
+
+/* 애니메이션 정의 */
+@keyframes glitch-animation {
+    0% {
+        clip: rect(10px, 9999px, 20px, 0);
+    }
+    25% {
+        clip: rect(5px, 9999px, 15px, 0);
+    }
+    50% {
+        clip: rect(15px, 9999px, 25px, 0);
+    }
+    75% {
+        clip: rect(0px, 9999px, 10px, 0);
+    }
+    100% {
+        clip: rect(10px, 9999px, 20px, 0);
+    }
+}
+
+/* ✅ 야간 모드일 때 글리치 버튼 스타일 */
+body.night-mode .btn-glitch {
+    background: white;  /* 배경을 흰색으로 */
+    color: green;        /* 글씨를 초록색으로 */
+    border-color: white; /* 테두리도 초록색 */
+}
+
+/* ✅ 주간 모드로 돌아오면 다시 원래 스타일 */
+body:not(.night-mode) .btn-glitch {
+    background: black !important;  /* 배경을 검은색으로 */
+    color: white !important;       /* 글씨를 흰색으로 */
+    border-color: white !important;
 }

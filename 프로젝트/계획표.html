@@ -7,6 +7,11 @@
     <script src="nightdaycolors.js"></script>
     <link rel="stylesheet" href="계획표.css">
     <script src="계획표.js" defer></script>
+    <!-- Google 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <!-- jQuery & GSAP 라이브러리 추가 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 </head>
 
 <body>
@@ -16,23 +21,52 @@
         nightDayHandler(this);
     ">
 
+    <!-- SVG 필터 (글리치 효과) -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.0005 0.0005" numOctaves="2" result="warp" seed="2"></feTurbulence>
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="8" in="SourceGraphic" in2="warp"></feDisplacementMap>
+            </filter>
+        </defs>
+    </svg>
+
     <div id="grid">
         <ol>
-            <li><a href="시간표.html">시간표</a></li>
-            <li><a href="계획표.html">계획표</a></li>
-            <li><a href="체크리스트.html">체크리스트</a></li>
-            <li><a href="월간달력.html">월간달력</a></li>
+            <nav>
+                <a href="시간표.html" class="btn btn-glitch" data-text="시간표">시간표</a>
+                <a href="계획표.html" class="btn btn-glitch" data-text="계획표">계획표</a>
+                <a href="체크리스트.html" class="btn btn-glitch" data-text="체크리스트">체크리스트</a>
+                <a href="월간달력.html" class="btn btn-glitch" data-text="월간달력">월간달력</a>
+                <a href="메모장.html" class="btn btn-glitch" data-text="메모장">메모장</a>
+                <a href="게임.html" class="btn btn-glitch" data-text="게임">게임</a>
+                <a href="타이머.html" class="btn btn-glitch" data-text="타이머">타이머</a>
+            </nav>
         </ol>
 
         <div id="article">
             <div class="planner-container">
                 <h2>📝 계획표</h2>
-                <input type="date" id="date-picker">
-                <input type="text" id="task-input" placeholder="할 일을 입력하세요">
-                <button id="add-task">추가</button>
+                
+                <!-- 날짜 선택 및 할 일 입력 -->
+                <div class="input-group">
+                    <input type="date" id="date-picker">
+                    <input type="text" id="task-input" placeholder="할 일을 입력하세요">
+                    <button id="add-task">추가</button>
+                </div>
+
+                <!-- 할 일 목록 -->
+                <h3>📌 할 일 목록</h3>
                 <ul id="task-list"></ul>
+
+                <!-- 완료된 목록 -->
+                <h3>✅ 완료된 목록</h3>
+                <ul id="completed-list"></ul>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="glitch.js"></script>
 </body>
 </html>
